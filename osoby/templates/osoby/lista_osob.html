@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Absolwentów</title>
+</head>
+<body>
+    <center>
+        <h1>Lista absolwentów:</h1>
+        <ol>
+            {% for o in osoby %}
+            {{ o }}, <spam>Klasa: {{ o.klasa }}</spam>
+                <br>
+            {% endfor %}
+        </ol>
+    </center>
+</body>
+</html>

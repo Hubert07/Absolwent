@@ -3,15 +3,16 @@ from django.contrib.auth.models import User
 
 class Klasa(models.Model):
     nazwa = models.CharField("nazwa klasy", max_length=3, default="")
-    rok_matury = models.IntegerField("podaj rok matury", default=0)
-    rok_naboru = models.IntegerField("podaj rok naboru", default=0)
+    rok_matury = models.IntegerField("rok matury", default=0)
+    rok_naboru = models.IntegerField("rok naboru", default=0)
 
     class Meta:
         verbose_name_plural = 'klasy'
         ordering = ['rok_matury']
 
     def __str__(self):
-        return self.nazwa + " " + str(self.rok_matury)
+        return self.nazwa + " (" + str(self.rok_matury) + ")"
+
 
 class Absolwent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -21,4 +22,4 @@ class Absolwent(models.Model):
         verbose_name_plural = 'absolwenci'
 
     def __str__(self):
-        return str(self.user.get_full_name())
+        return self.user.get_full_name()

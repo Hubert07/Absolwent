@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_nlub4#$5^jumgtb&!0e0m-8f+tpt1+8+8d)rl$)-%^%y8qkmq'
+SECRET_KEY = 'uvji^&nvlr_j6$0i@6n3dntre%%w*_v5tv-cpbo4!0^b3j$j_+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'osoby.apps.OsobyConfig'
+    'osoby.apps.OsobyConfig',
+    'wiadomosci.apps.WiadomosciConfig',
 ]
 
 MIDDLEWARE = [
@@ -104,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl'
+LANGUAGE_CODE = 'pl-PL'
 
 TIME_ZONE = 'Europe/Warsaw'
 
