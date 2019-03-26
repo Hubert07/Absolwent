@@ -1,0 +1,17 @@
+{% extends 'szablon.html' %}
+
+{% block tytol %}
+    Zaloguj się
+{% endblock %}
+
+{% block tresc %}
+    <div class="w-100 bg-light p-4">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <center>
+                <button type="submit" class="btn btn-info p-2 ">Zaloguj</button>
+            </center>
+        </form>
+    </div>
+{% endblock %}

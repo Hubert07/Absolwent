@@ -1,0 +1,19 @@
+{% extends 'szablon.html' %}
+
+{% block tytol %}
+    Osoby
+{% endblock %}
+
+{% block tresc %}
+    <div class="w-100 bg-info p-4">
+        <center>
+            <h1>Lista absolwentów:</h1>
+            <ol>
+                {% for o in osoby %}
+                {{ o }}, <spam>Klasa: {{ o.klasa }}</spam>
+                    <br>
+                {% endfor %}
+            </ol>
+        </center>
+    </div>
+{% endblock %}
