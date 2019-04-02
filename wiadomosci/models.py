@@ -4,9 +4,9 @@ from django.utils import timezone
 
 
 class Wiadomosc(models.Model):
-    tresc = models.TextField("wiadomość")
+    tresc = models.TextField("wiadomość:")
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    data_d = models.DateTimeField("dodana", default=timezone.now)
+    data_d = models.DateTimeField("dodana:", default=timezone.now)
 
     class Meta:
         verbose_name = "Wiadomość"

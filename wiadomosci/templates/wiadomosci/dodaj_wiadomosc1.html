@@ -1,0 +1,33 @@
+{% extends 'szablon.html' %}
+
+{% block tytol %}
+    Dodaj widomość
+{% endblock %}
+
+
+{%block h1 %}
+    Dodaj wiadomość
+{% endblock %}
+
+{% block tresc %}
+    <div class="w-100 bg-primary p-4 rounded">
+        <center>
+        {% if user.is_authenticated %}
+
+            {% if perms.wiadomosci.add_wiadomosc %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info p-3">Zapisz</button>
+            </form>
+
+                {% else %}
+                    <div>Nie możesz dodać wiadomości!</div>
+                {% endif %}
+
+        {% else %}
+            <p class="well">Nie jesteśzalogowany!</p>
+        {% endif %}
+        </center>
+    </div>
+{% endblock %}
